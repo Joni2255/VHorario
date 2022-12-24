@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from mainApp.models import Bloques, Docente, Dias, Bloque_dias
 from mainApp.forms import formBloqueDias
+from django.shortcuts import redirect
 
 def index(req):
     bloques = Bloques.objects.all()
@@ -29,7 +30,7 @@ def bloque(request):
         form = formBloqueDias(request.POST)
         if form.is_valid():
             form.save()
-            return index(request)
+            return redirect('/')
 
     data = {'form': form}
     return render(request, 'asignarbloque.html', data)

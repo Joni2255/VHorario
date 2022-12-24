@@ -20,7 +20,7 @@
     </div>
   </header>
   <main>
-        <form method="GET">
+        <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <a class="btn btn-danger" href="/" role="button">Cancelar</a>
