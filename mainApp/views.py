@@ -20,7 +20,6 @@ def search(request):
     busqueda = request.GET["busebump"]
     docente = Docente.objects.filter(nombre__icontains=busqueda)
     context = {'docente' : docente, }
-
     return render(request, template_name ,context)
 
 def bloque(request):
