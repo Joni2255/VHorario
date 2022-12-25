@@ -30,7 +30,7 @@ def bloque(request):
         form = formBloqueDias(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return index(request)
 
     data = {'form': form}
     return render(request, 'asignarbloque.html', data)
